@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin center($position){
+    position: $position;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.wrapper{
+    border: 5px solid blueviolet;
+    outline:4px solid hotpink;
+    min-width: 50%;
+    height: 300px;
+    border-radius: 10px;
+    background: #fff;
+    color:darkblue;
+    @include center(absolute);
+    font-size: 20px;
+    text-align:center;
+    padding: 5px;
+    blockquote{
+        display: block;
+        font-style: oblique;
+        width: 100%;
+        @include center(absolute);
+        font-weight: 100;
+        cite{
+            display: block;
+            text-transform: uppercase;
+            font-style: normal;
+            font-size: smaller;
+        }
+    }
+    #generate{
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translate(-50%);
+        height: 40px;
+        width: 130px;
+        font-size: larger;
+        background-color:blueviolet;
+        color: white;
+    }
+    @media screen and (max-width: 600px){
+        min-width: 90%;
+        min-height: 80%;;
+        height: unset;
+    }
+}
